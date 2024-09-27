@@ -1,0 +1,81 @@
+# Adventure Game: Forest Adventure
+# (hope you enjoy!)
+# This game has 3 levels of choices, and each decision affects the storyline.
+# Added creativity: There are hidden choices and extra levels of detail, like an enchanted map
+# that guides the player, increasing the immersion.
+# Description: I added hidden paths and more than two choices in key parts of the game.
+# I also included input handling for invalid responses.
+
+print("You are walking through a dark forest and you find two items: a MATCH and a FLASHLIGHT. "
+      "Which one do you want to take?")
+choice1 = input("Type 'MATCH' or 'FLASHLIGHT': ").lower()
+
+if choice1 == "match":
+    print("\nYou pick up the match and light it. For a moment, the forest around you lights up, "
+          "and you see a big grizzly bear.")
+    print("The bear notices you! Do you want to RUN, HIDE behind a tree, or TALK to the bear?")
+    choice2 = input("Type 'RUN', 'HIDE', or 'TALK': ").lower()
+
+    if choice2 == "run":
+        print("\nYou try to run as fast as you can, but the bear is faster...")
+        print("Game over. You couldn't escape from the bear.")
+    elif choice2 == "hide":
+        print("\nYou hide behind a tree. The bear doesn't see you and walks away.")
+        print("Now, you find a strange MAP glowing on the ground.")
+        print("Do you want to PICK up the map or CONTINUE walking?")
+        choice3 = input("Type 'PICK' or 'CONTINUE': ").lower()
+
+        if choice3 == "pick":
+            print("\nYou pick up the enchanted map. It shows a secret way out of the forest. "
+                  "You follow it and safely escape!")
+            print("Congratulations! You found the secret path and escaped the forest!")
+        elif choice3 == "continue":
+            print("\nYou continue walking deeper into the forest and get lost. Unfortunately, "
+                  "you cannot find your way out.")
+            print("Game over.")
+        else:
+            print("\nInvalid choice. Game over.")
+    elif choice2 == "talk":
+        print("\nYou bravely talk to the bear, and surprisingly, the bear seems to understand you.")
+        print("The bear offers to guide you to safety or give you a ride on its back to explore the forest.")
+        choice3 = input("Type 'GUIDE' for safety or 'RIDE' to explore: ").lower()
+
+        if choice3 == "guide":
+            print("\nThe bear guides you out of the forest. You are saved!")
+            print("Congratulations! You escaped the forest!")
+        elif choice3 == "ride":
+            print("\nYou ride on the bear’s back and explore the forest. "
+                  "After a while, the bear leaves you in a cave where treasures await!")
+            print("Congratulations! You found hidden treasures!")
+        else:
+            print("\nInvalid choice. Game over.")
+    else:
+        print("\nInvalid choice. Game over.")
+
+elif choice1 == "flashlight":
+    print("\nYou pick up the flashlight and turn it on. The path ahead is lit, "
+          "but you hear a strange noise from the trees.")
+    print("Do you want to follow the PATH or investigate the NOISE?")
+    choice2 = input("Type 'PATH' or 'NOISE': ").lower()
+
+    if choice2 == "path":
+        print("\nYou follow the path and find your way out of the forest. You are saved!")
+        print("Congratulations! You escaped the forest!")
+    elif choice2 == "noise":
+        print("\nYou walk towards the trees and find that the noise was made by an owl.")
+        print("The owl asks if you want to fly with it to see a secret part of the forest.")
+        choice3 = input("Do you want to 'FLY' with the owl or 'IGNORE' it? ").lower()
+
+        if choice3 == "fly":
+            print("\nThe owl takes you to a hidden part of the forest filled with magical creatures.")
+            print("Congratulations! You discovered a hidden magical world!")
+        elif choice3 == "ignore":
+            print("\nYou ignore the owl and continue on the path, eventually finding your way out.")
+            print("You escaped the forest!")
+        else:
+            print("\nInvalid choice. Game over.")
+    else:
+        print("\nInvalid choice. Game over.")
+
+else:
+    print("\nInvalid choice. Game over.")
