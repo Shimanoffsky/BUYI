@@ -1,0 +1,35 @@
+# MEAL CALCULATOR APP
+# This program calculates the total cost of a meal, including drinks, sales tax, and tips.
+# It asks the user for the price of a child's meal, an adult's meal, drinks, and the number of children and adults.
+# Then, it calculates the subtotal, adds sales tax and tips, and finally, calculates the change after payment.
+
+
+# Collect data
+price_child = float(input("What is the price of a child's meal? "))
+price_adult = float(input("What is the price of an adult's meal? "))
+price_drink = float(input("What is the price of a drink? "))
+num_children = int(input("How many children are there? "))
+num_adults = int(input("How many adults are there? "))
+
+# Subtotal (cost of food and drinks)
+subtotal = (price_child * num_children) + (price_adult * num_adults) + (price_drink * (num_children + num_adults))
+print(f"Subtotal: ${subtotal:.2f}")
+
+# Input and calculate sales tax
+tax_rate = float(input("What is the sales tax rate? "))
+sales_tax = subtotal * (tax_rate / 100)
+total = subtotal + sales_tax
+print(f"Sales Tax: ${sales_tax:.2f}")
+print(f"Total (before tips): ${total:.2f}")
+
+# Input and calculate tips
+tip_percent = float(input("What percent would you like to tip? "))
+tip_amount = total * (tip_percent / 100)
+total_with_tips = total + tip_amount
+print(f"Tip: ${tip_amount:.2f}")
+print(f"Total with tips: ${total_with_tips:.2f}")
+
+# Calculate change
+payment = float(input("What is the payment amount? "))
+change = payment - total_with_tips
+print(f"Change: ${change:.2f}")
